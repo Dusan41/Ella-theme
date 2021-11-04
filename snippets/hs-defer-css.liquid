@@ -1,0 +1,20 @@
+{%comment%}
+    Defers the CSS, which is then loaded by hs-defer-css-loader.liquid after the page loads.
+    E.g. {% render 'hs-defer-css' with filename: 'filename', pages: 'index','product','collection', local: true %}
+{%endcomment%}
+
+{% if pages contains template.name %}
+<noscript class="hs-deferred-styles">
+  {% if local %}
+    {{ filename | asset_url | stylesheet_tag }}
+  {% else %}
+    {{ filename | stylesheet_tag }}
+  {% endif %}
+</noscript>
+{% else %}
+  {% if local %}
+    {{ filename | asset_url | stylesheet_tag }}
+  {% else %}
+    {{ filename | stylesheet_tag }}
+  {% endif %}
+{% endif %}

@@ -1,0 +1,3 @@
+{% render 'hs-defer-css' with filename: 'vendor.min.css', pages: 'index,collection,product' | split: ',', local: true %}
+{% render 'hs-defer-css' with filename: 'theme-styles.scss.css', pages: 'index,collection,product' | split: ',', local: true %}
+{% render 'hs-defer-css' with filename: 'theme-styles-responsive.scss.css', pages: 'index,collection,product' | split: ',', local: true %}
